@@ -49,7 +49,7 @@ public class ExerciciosAula09 {
             System.out.println("Voto obrigatorio");
         }*/
         
-        Scanner ler = new Scanner(System.in);
+        /*Scanner ler = new Scanner(System.in);
         System.out.println("Digite a 1° nota: ");
         float n1 = ler.nextFloat();
         System.out.println("Digite a 2° nota? ");
@@ -62,6 +62,47 @@ public class ExerciciosAula09 {
         System.out.printf("Aluno em recuperação com %.2f", m);
     } else {
             System.out.printf("Aluno reprovado com %.2f", m);
+    }*/
+
+        /*Scanner ler = new Scanner(System.in);
+        System.out.println("Digite o usuario: ");
+        String user = ler.next();
+        System.out.println("Digite sua senha: ");
+        String senha = ler.next();
+        
+        if ((user.equals("admin")) && (senha.equals("1234"))){
+            System.out.println("Login Aceito");
+        } else {
+            System.out.println("Login Negado");
+        }*/
+        
+        /*Scanner ler = new Scanner(System.in);
+        System.out.println("Digite sua idade: ");
+        int idade = ler.nextInt();
+        
+        if (idade <= 9){
+            System.out.println("Categoria Mirin com " + idade + " anos");
+        } else if(idade > 9 && idade <= 14) {
+            System.out.println("Categoria Infantil com " + idade + " anos");
+        } else if (idade > 14 && idade <= 19){
+            System.out.println("Categoria Junior com " + idade + " anos");
+        } else if (idade > 19 && idade <= 25){
+            System.out.println("Categoria Senior com " + idade + " anos");
+        } else{
+            System.out.println("Categoria Master com " + idade + " anos");
+        }*/
+        
+        Scanner ler = new Scanner(System.in);
+        System.out.println("Programa pensar em 1 ate 5, tentar acertar");
+        int ale = (int) (1 + Math.random() * (6 - 1));
+        
+        System.out.println("Digite um valor: ");
+        int val = ler.nextInt();
+        
+        if (val == ale) {
+            System.out.println("Acertou!");
+        } else {
+            System.out.println("Errou! Pensei no valor " + ale);
         }
-    }
+}
 }
