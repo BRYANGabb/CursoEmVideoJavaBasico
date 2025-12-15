@@ -4,6 +4,8 @@
 
 package br.com.bryan.contador3;
 
+import java.util.Scanner;
+
 /**
  *
  * @author bryan
@@ -36,7 +38,7 @@ public class Contador3 {
             cc -= 5;
         }*/
         
-        int cc = 1;
+        /*int cc = 1;
         while (cc <= 15){
     
             if (cc % 3 == 0 && cc % 5 == 0){
@@ -49,6 +51,54 @@ public class Contador3 {
                 System.out.println(cc);
             }
             cc++;
+        }*/
+        
+        /*int soma = 0;
+        int cc = 0;
+        while (cc < 100){
+           
+            cc++;
+            soma += cc;
+            System.out.println(cc);
+            
         }
+        System.out.println("Soma de todos os numeros: " + soma);*/
+        
+        /*Scanner ler = new Scanner(System.in);
+       
+        int num = 1;
+        int soma = 0;
+        
+        while (num != 0){
+            System.out.println("Digite um valor: ");
+            num = ler.nextInt();
+            soma += num;
+        }
+        System.out.println("Valor de todos numeros digitados: " + soma);*/
+        
+        /*Scanner ler = new Scanner(System.in);
+        
+        int num = 1;
+        int somaPar = 0;
+        int somaImpar = 0;
+        
+        while (num != 0){
+        
+            System.out.println("Digite um valor: ");
+            num = ler.nextInt();
+            
+            if (num != 0){
+                
+            if (num % 2 == 1) {
+                somaImpar += num;
+            } else {
+                somaPar += num;
+            }
+            }
+        }
+        System.out.println("Soma de todos numeros Par: " + somaPar);
+        System.out.println("Soma de todos numeros Impar: " + somaImpar);*/
+        
+        
     }
 }
