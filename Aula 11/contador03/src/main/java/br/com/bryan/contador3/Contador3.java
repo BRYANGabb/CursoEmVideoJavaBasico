@@ -99,6 +99,130 @@ public class Contador3 {
         System.out.println("Soma de todos numeros Par: " + somaPar);
         System.out.println("Soma de todos numeros Impar: " + somaImpar);*/
         
+        /*Scanner ler = new Scanner(System.in);
         
-    }
+        int nota = 0;
+        int m = 0;
+        int soma = 0; 
+        
+        while (nota != -1){
+            
+            System.out.println("Digite uma nota: (0 a 10)");
+            nota = ler.nextInt();
+                
+            if (nota >= 0 && nota <= 10){
+            
+                soma += nota;
+                m++;
+                
+            }
+        }
+        if (m > 0){
+            System.out.println("Media das notas: " + (soma / m));
+        } else {
+            System.out.println("Nenhum valor valido foi digitado!");
+        }*/
+        
+        /*Scanner ler = new Scanner(System.in);
+        
+        String senha = "";
+        
+        while (!senha.equals("1234")){
+            System.out.println("Digite a senha: ");
+            senha = ler.nextLine();
+            
+        }
+        System.out.println("Acesso permitido!");
+    }*/
+        
+        /*Scanner ler = new Scanner(System.in);
+        
+        System.out.println("Digite um valor: (0 encerra o programa) ");
+        int val = ler.nextInt();
+        
+        if (val != 0){
+            int maior = val;
+            int menor = val;
+        
+            while(val != 0){
+                System.out.println("Digite um valor: (0 encerra o programa) ");
+                val = ler.nextInt();
+                if (val != 0){
+                    if (val > maior){
+                        maior = val;
+                    } else if (val < menor) {
+                        menor = val;
+                    }
+                }
+            }
+            System.out.println("Maior valor digitado: " + maior);
+            System.out.println("Menor valor digitado: " + menor);
+        }
+        System.out.println("Programa encerrado!");*/
+        
+        /*Scanner ler = new Scanner(System.in);
+        int menu = 0;
+        
+        while (menu != 3){
+            System.out.println("1- soma");
+            System.out.println("2- subtrair");
+            System.out.println("3- sair");
+            menu = ler.nextInt();
+            
+            switch(menu){
+                case 1:
+                    System.out.println("Digite 1° valor: ");
+                    int num1 = ler.nextInt();
+                    System.out.println("Digite 2º valor: ");
+                    int num2 = ler.nextInt();
+                    int soma = num1 + num2;
+                    System.out.println("Valor da soma: "+ soma);
+                    break;
+                    
+                case 2: 
+                    System.out.println("Digite 1° valor: ");
+                    int n1 = ler.nextInt();
+                    System.out.println("Digite 2º valor: ");
+                    int n2 = ler.nextInt();
+                    int sub = n1 - n2;
+                    System.out.println("Valor da subtracao: " + sub);
+                    break;
+                    
+                case 3:
+                    System.out.println("Menu Encerrado!");
+                    break;
+                    
+                default:
+                    System.out.println("Opção Invalida!");*/
+        
+        Scanner ler = new Scanner(System.in);
+        
+        int idade = 0;
+        int cad = 0;
+        int soma = 0;
+        int m = 0;
+        int maior = 0;
+        
+        while (idade != -1){
+            System.out.println("Digite sua idade: ");
+            idade = ler.nextInt();
+            if (idade != -1){
+                cad++;
+                soma += idade;
+            
+                if (idade > 18){
+                    maior++;
+                }
+            }
+        }
+        
+        if (cad > 0){
+        m = soma / cad;
+        System.out.println("Media das idades: " + m);
+        System.out.println("Foram cadastradas " + cad + " pessoas");
+        System.out.println("Quantas pessoas tem mais de 18 anos: " + maior);
+        } else {
+            System.out.println("Nenhum pessoa foi cadastrada!");
+        }
+}
 }
