@@ -14,6 +14,8 @@ public class Vetor05 {
 
     public static void main(String[] args) {
         int v[] = new int [20];
+        
+        // Preenche todos os elementos com o valor 10
         Arrays.fill(v, 0);
         
         for (int vetor: v){

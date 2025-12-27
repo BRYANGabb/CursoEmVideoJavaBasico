@@ -4,6 +4,7 @@
 
 package br.com.bryan.aula14exercicio;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -96,7 +97,7 @@ public class Aula14Exercicio {
         System.out.println("Existem numeros Pares: " + nPar);
         System.out.println("Existem numeros Impares: " + nImpar);*/
         
-        Scanner ler = new Scanner(System.in);
+        /*Scanner ler = new Scanner(System.in);
         
         String aluno[] = new String[5];
         
@@ -137,6 +138,60 @@ public class Aula14Exercicio {
                     System.out.println(aluno[i] + ": " + nota[i]);
                 }
             }
+        }*/
+        
+        /*Scanner ler = new Scanner(System.in);
+        
+        int n[] = {8, 10, 9, 2, 4, 15, 20, 4};
+        
+        int val;
+        
+        System.out.println("Digite um valor: ");
+        val = ler.nextInt();
+        
+        boolean resultado = false;
+        
+        for (int i = 0; i < n.length; i++){
+            if (n[i] == val){
+                resultado = true;
+                System.out.println("Valor na posição: " + i);
+            }  
+        }
+        if (resultado == true){
+            System.out.println("Numero encontrado");
+        } else {
+            System.out.println("Numero nao encontrado");
+        }*/
+        
+        String mes[] = {"Jan","Fev","Mar","Abr","Mai","Jun",
+            "Jul","Ago","Set","Out","Nov","Dez"};
+        
+        int dia[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        
+        int ano = LocalDate.now().getYear();
+        
+        if (ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0)){
+            dia[1]++;
+        }
+        
+        for (int i = 0; i < mes.length; i++){
+            System.out.println(mes[i] + ": " + dia[i]);
+        }
+        System.out.println("");
+        
+        Scanner ler = new Scanner(System.in);
+        
+        int dataMes;
+        
+        System.out.print("Digite a data do mês: (1 a 12) ");
+        dataMes = ler.nextInt();
+        
+        dataMes--;
+            
+        if (dataMes >= 0 && dataMes < mes.length){
+            System.out.println(mes[dataMes] + ": " + dia[dataMes]);
+        } else{
+            System.out.println("Mês Invalido!");
         }
     }
 }
