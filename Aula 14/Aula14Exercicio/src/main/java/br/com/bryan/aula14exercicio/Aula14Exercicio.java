@@ -163,7 +163,7 @@ public class Aula14Exercicio {
             System.out.println("Numero nao encontrado");
         }*/
         
-        String mes[] = {"Jan","Fev","Mar","Abr","Mai","Jun",
+        /*String mes[] = {"Jan","Fev","Mar","Abr","Mai","Jun",
             "Jul","Ago","Set","Out","Nov","Dez"};
         
         int dia[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -192,6 +192,6 @@ public class Aula14Exercicio {
             System.out.println(mes[dataMes] + ": " + dia[dataMes]);
         } else{
             System.out.println("Mês Invalido!");
-        }
+        }*/
     }
 }
