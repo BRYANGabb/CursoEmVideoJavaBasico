@@ -20,9 +20,10 @@ public class TelaAnalisador extends javax.swing.JFrame {
     
     float soma = 0;
     float valor;
-    float maior;
-    float menor;
-    float media = (float) soma / quantidade;
+    float maior = 0;
+    float menor = 0;
+    float media = 0;
+    boolean primeiraNota = true;
     
     public TelaAnalisador() {
         initComponents();
@@ -77,6 +78,11 @@ public class TelaAnalisador extends javax.swing.JFrame {
         });
 
         btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Quantidade de Notas:");
 
@@ -154,16 +160,17 @@ public class TelaAnalisador extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnCalc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addComponent(panRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,16 +195,20 @@ public class TelaAnalisador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        maior = valor;
-        menor = valor;
         if (pos < nota.length){
             valor = Float.parseFloat(txtNota.getText());
             if (valor >= 0 && valor <= 10){
-                if (maior < valor){
+                if (primeiraNota){
                     maior = valor;
-                }
-                if (menor > valor){
                     menor = valor;
+                    primeiraNota = false;
+                } else{
+                    if (valor > maior){
+                        maior = valor;
+                    }
+                    if (valor < menor){
+                        menor = valor;
+                    }
                 }
                 soma += valor;
                 quantidade++;
@@ -212,6 +223,7 @@ public class TelaAnalisador extends javax.swing.JFrame {
 
     private void btnCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcActionPerformed
         if (quantidade > 0){
+            media = soma / quantidade;
             panRes.setVisible(true);
             lblQuant.setText(Integer.toString(quantidade));
             lblMedia.setText(Float.toString(media));   
@@ -220,13 +232,25 @@ public class TelaAnalisador extends javax.swing.JFrame {
         
             if (media >= 7){
                 lblSituacao.setText("APROVADO");
-            } else if (media >= 5 && media < 7){
+            } else if (media >= 4 && media < 7){
                 lblSituacao.setText("RECUPERAÇÃO");
             } else {
                 lblSituacao.setText("REPROVADO");
             }
         }
     }//GEN-LAST:event_btnCalcActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        for (int i =0; i < nota.length; i++){
+            nota[i] = 0;
+        }
+        media = 0;
+        soma = 0;
+        maior = 0;
+        menor = 0;
+        quantidade = 0;
+        pos = 0;
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
